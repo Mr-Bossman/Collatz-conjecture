@@ -42,13 +42,12 @@ int main(int argc, char *argv[]){
 		register type_t cnt = 0;
 		for(type_t i = b; i < total+b;i++){
 			register type_t t = i;
-			while(t > 4){
+			while(t > 1){
 				register type_t tmp = t;
 				t>>=1;
 				t+=(tmp&1)*(tmp+1);
 				cnt+=1+(tmp&1);
 			}
-			if(t == 3) t = 14; // add 7 for ending with 3
 			cnt += t>>1;
 		}
 		count += cnt; // so race conditions are kept low
